@@ -1,3 +1,5 @@
+//JavaScript for the logic and jQuery to manipulate HTML
+
 $(document).ready(function(){
 
 //Button on click event shows questions
@@ -11,5 +13,7 @@ $(document).ready(function(){
 //All Done Button shows results
 
 //Timer runs out and results are displayed
+
+//Maybe add another set of questions for round two?
 
 }
