@@ -4,6 +4,7 @@ $(document).ready(function(){
 // click event for button #begin
 //Button on click event shows questions and Answers. Check "" in p
 
+/* Not Working
 function appendText() {
     var q1 = $("<p class="question1"></p>").text("IPA stands for Indepenent Pale Ale.");   // Create with jQuery
     var q2 = $("<p class="question2"></p>").text("Roasting the barley makes stouts and porters dark.");
@@ -27,16 +28,42 @@ function appendText() {
     var q8 = $("#question8").text("True" + "False");
     $("body").append(q1, q2, q3, q4, q5, q6, q7, q8);      // Append the new elements 
   } 
+  */
+
+ //questions 
+  questions: {
+    question1: "IPA stands for Indepenent Pale Ale.",
+    question2: "Roasting the barley makes stouts and porters dark.",
+    question3: "Hefewizen is a wheat beer.",
+    question4: "Pilsners are a type of lager.",
+    question5: "Yeast turns the sugars of the grain into alcohol.",
+    question6: "Yeast acts a preservative.",
+    question7: "Hops add flavor to beer.",
+    question8: "Hops add aroma to beer.",
+  }
+//Answer choices
+choices: {
+    question1: ["True", "False"],
+    question2: ["True", "False"],
+    question3: ["True", "False"],
+    question4: ["True", "False"],
+    question5: ["True", "False"],
+    question6: ["True", "False"],
+    question7: ["True", "False"],
+    question8: ["True", "False"],
+
+  }
+
 //Apply answers to questions
   answers: {
-      q1: "False",
-      q1: "True",
-      q1: "True",
-      q1: "False",
-      q1: "True",
-      q1: "False",
-      q1: "True",
-      q1: "True",
+    question1: "False",
+    question2: "True",
+    question3: "True",
+    question4: "False",
+    question5: "True",
+    question6: "False",
+    question7: "True",
+    question8: "True",
 
   }
 // Build timer reference https://fengyuanchen.github.io/countdown/
