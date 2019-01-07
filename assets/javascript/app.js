@@ -30,7 +30,7 @@ function appendText() {
     $("body").append(q1, q2, q3, q4, q5, q6, q7, q8);      // Append the new elements 
   } 
   */
- 
+
  //is this in right place?
  var myQuestions = [
     {
@@ -99,6 +99,14 @@ function appendText() {
     }
 ]; 
 
+//Generate the qame in HTML
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
+
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton); 
+
+
  function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
 	function showQuestions(questions, quizContainer){
@@ -137,9 +145,7 @@ function appendText() {
 	quizContainer.innerHTML = output.join('');
     }
     
-    // show the questions. Is this in right place?
-	showQuestions(questions, quizContainer);
-
+    
 	function showResults(questions, quizContainer, resultsContainer){
 		// gather answer containers from our quiz
 	var answerContainers = quizContainer.querySelectorAll('.answers');
@@ -172,20 +178,16 @@ function appendText() {
 	// show number of correct answers out of total
 	resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
 }
-    
-} //function generate quiz bracket
+
+// show the questions. Is this in right place?
+showQuestions(questions, quizContainer);
+
 
 	//when user clicks submit, show results. Is this in right place?
 	submitButton.onclick = function(){
 		showResults(questions, quizContainer, resultsContainer);
     }
-    //Generate the qame in HTML
-    var quizContainer = document.getElementById('quiz');
-    var resultsContainer = document.getElementById('results');
-    var submitButton = document.getElementById('submit');
-
-    generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton); 
-
+} //function generate quiz bracket    
  /*questions 2nd technique
   questions: {
     question1: "IPA stands for Indepenent Pale Ale.",
