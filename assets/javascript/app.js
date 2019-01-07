@@ -1,10 +1,11 @@
 //JavaScript for the logic and jQuery to manipulate HTML
 
-$(document).ready(function(){
-// click event for button #begin
-//Button on click event shows questions and Answers. Check "" in p
 
-/* Not Working
+// click event for button #begin
+
+//Button on click event shows questions and Answers. 
+
+/* questions 1st technique Not Working
 function appendText() {
     var q1 = $("<p class="question1"></p>").text("IPA stands for Indepenent Pale Ale.");   // Create with jQuery
     var q2 = $("<p class="question2"></p>").text("Roasting the barley makes stouts and porters dark.");
@@ -29,8 +30,163 @@ function appendText() {
     $("body").append(q1, q2, q3, q4, q5, q6, q7, q8);      // Append the new elements 
   } 
   */
+ 
+ //is this in right place?
+ var myQuestions = [
+    {
+        question: "IPA stands for Indepenent Pale Ale.",
+        answers: {
+            a: 'True',
+            b: 'False'
+        },
+        correctAnswer: 'False'
+    },
+    {
+        question: "Roasting the barley makes stouts and porters dark.?",
+        answers: {
+            a: 'True',
+            b: 'False'
+        },
+        correctAnswer: 'True'
+    },
+    {
+        question: "Hefewizen is a wheat beer.",
+        answers: {
+            a: 'True',
+            b: 'False'
+        },
+        correctAnswer: 'True'
+    },
+    {
+        question: "Pilsners are a type of lager.",
+        answers: {
+            a: 'True',
+            b: 'False'
+        },
+        correctAnswer: 'False'
+    },
+    {
+        question: "Yeast turns the sugars of the grain into alcohol.",
+        answers: {
+            a: 'True',
+            b: 'False'
+        },
+        correctAnswer: 'True'
+    },
+    {
+        question: "Yeast acts a preservative.",
+        answers: {
+            a: 'True',
+            b: 'False'
+        },
+        correctAnswer: 'False'
+    },
+    {
+        question: "Hops add flavor to beer.",
+        answers: {
+            a: 'True',
+            b: 'False'
+        },
+        correctAnswer: 'True'
+    },
+    {
+        question: "Hops add aroma to beer.",
+        answers: {
+            a: 'True',
+            b: 'False'
+        },
+        correctAnswer: 'True'
+    }
+]; 
 
- //questions 
+ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+
+	function showQuestions(questions, quizContainer){
+           
+        // we'll need a place to store the output and the answer choices
+	var output = [];
+	var answers;
+
+	// for each question...
+	for(var i=0; i<questions.length; i++){
+		
+		// first reset the list of answers
+		answers = [];
+
+		// for each available answer to this question...
+		for(letter in questions[i].answers){
+
+			// ...add an html radio button
+			answers.push(
+				'<label>'
+					+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
+					+ letter + ': '
+					+ questions[i].answers[letter]
+				+ '</label>'
+			);
+		}
+
+		// add this question and its answers to the output
+		output.push(
+			'<div class="question">' + questions[i].question + '</div>'
+			+ '<div class="answers">' + answers.join('') + '</div>'
+		);
+	}
+
+	// finally combine our output list into one string of html and put it on the page
+	quizContainer.innerHTML = output.join('');
+    }
+    
+    // show the questions. Is this in right place?
+	showQuestions(questions, quizContainer);
+
+	function showResults(questions, quizContainer, resultsContainer){
+		// gather answer containers from our quiz
+	var answerContainers = quizContainer.querySelectorAll('.answers');
+	
+	// keep track of user's answers
+	var userAnswer = '';
+	var numCorrect = 0;
+	
+	// for each question...
+	for(var i=0; i<questions.length; i++){
+
+		// find selected answer
+		userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+		
+		// if answer is correct
+		if(userAnswer===questions[i].correctAnswer){
+			// add to the number of correct answers
+			numCorrect++;
+			
+			// color the answers green
+			answerContainers[i].style.color = 'lightgreen';
+		}
+		// if answer is wrong or blank
+		else{
+			// color the answers red
+			answerContainers[i].style.color = 'red';
+		}
+	}
+
+	// show number of correct answers out of total
+	resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+}
+    
+} //function generate quiz bracket
+
+	//when user clicks submit, show results. Is this in right place?
+	submitButton.onclick = function(){
+		showResults(questions, quizContainer, resultsContainer);
+    }
+    //Generate the qame in HTML
+    var quizContainer = document.getElementById('quiz');
+    var resultsContainer = document.getElementById('results');
+    var submitButton = document.getElementById('submit');
+
+    generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton); 
+
+ /*questions 2nd technique
   questions: {
     question1: "IPA stands for Indepenent Pale Ale.",
     question2: "Roasting the barley makes stouts and porters dark.",
@@ -66,10 +222,13 @@ choices: {
     question8: "True",
 
   }
+ */
+
 // Build timer reference https://fengyuanchen.github.io/countdown/
 
-//Timer starts running
+/*Timer starts running
 $('#timer').text(trivia.timer);
+*/
 //Button on click events for answers record answers
 
 //Only one answer can be selected
@@ -81,4 +240,3 @@ $('#timer').text(trivia.timer);
 
 //Maybe add another set of questions for round two?
 
-}
