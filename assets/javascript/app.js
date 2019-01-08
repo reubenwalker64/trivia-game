@@ -1,5 +1,3 @@
-//JavaScript for the logic and jQuery to manipulate HTML
-
     //  Set our number counter to 60.
     var number = 60;
 

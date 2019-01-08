@@ -15,7 +15,7 @@ h1 {
 hr {
 	border-top: 5px solid rgb(109, 2, 2);
 }
-/*Style Text*/
+
 p {
 	margin-right: 20px;
     margin-left: 30px;
@@ -25,23 +25,7 @@ p {
     letter-spacing: 2px;
 
 }
-/*Style Buttons
-<!--Start Button. Centering with css wouldn't work??? -->
-<center><button onclick="myFunction()">Begin Game</button></center>
 
-button {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    color: red;
-    font-family: sans-serif;
-    font-size: 36px;
-    text-align: center;
-    border-radius: 3px;
-    width: 400px;
-    
-}
-*/
 h2 {
     padding: 20px;
     margin-left: 30px;
@@ -63,13 +47,7 @@ h2 {
     font-size: 30px;
     letter-spacing: 2px;
 }
-/*.question{
-	font-weight: 600;
-}
-.answers {
-    margin-bottom: 20px;
-}
-*/
+
 #submit{
 	font-family: sans-serif;
     font-size: 20px;
