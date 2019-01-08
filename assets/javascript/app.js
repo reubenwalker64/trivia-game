@@ -172,7 +172,7 @@ generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
 		);
 	}
 
-	// finally combine our output list into one string of html and put it on the page
+	// combine our output list into one string of html and put it on the page
 	quizContainer.innerHTML = output.join('');
     }
     
@@ -196,12 +196,12 @@ generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
 			// add to the number of correct answers
 			numCorrect++;
 			
-			// color the answers green
+			// color the answers blue
 			answerContainers[i].style.color = '#0780F9';
 		}
 		// if answer is wrong or blank
 		else{
-			// color the answers red
+			// color the answers yellow
 			answerContainers[i].style.color = '#F9E607';
 		}
 	}
