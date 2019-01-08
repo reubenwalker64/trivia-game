@@ -30,7 +30,7 @@ p {
 
 }
 /*Style Buttons*/
-#begin {
+button {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -38,17 +38,18 @@ p {
     font-family: sans-serif;
     font-size: 36px;
     text-align: center;
-    border: 3px solid green;
+    border-radius: 3px;
     width: 400px;
     
 }
 
-.question{
+/*.question{
 	font-weight: 600;
 }
 .answers {
     margin-bottom: 20px;
 }
+*/
 #submit{
 	font-family: sans-serif;
 	font-size: 20px;
@@ -63,4 +64,18 @@ p {
 #submit:hover{
     background-color: red;
     text-align: center;
+}
+
+#quiz {
+    margin-left: 20px;
+    font-family: sans-serif;
+	color: #07b814;
+	font-size: 22px;
+}
+
+#results {
+    margin-left: 20px;
+    font-family: sans-serif;
+	color: #07b814;
+    font-size: 22px;
 }

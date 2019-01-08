@@ -1,37 +1,55 @@
 //JavaScript for the logic and jQuery to manipulate HTML
 
 
-// click event for button #begin
 
-//Button on click event shows questions and Answers. 
+//Timer that needs to be edited BIG TIME
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 15, 2019 23:59:59").getTime();
+        
+// Update the count down every 1 second
+var x = setInterval(function() {
 
-/* questions 1st technique Not Working
-function appendText() {
-    var q1 = $("<p class="question1"></p>").text("IPA stands for Indepenent Pale Ale.");   // Create with jQuery
-    var q2 = $("<p class="question2"></p>").text("Roasting the barley makes stouts and porters dark.");
-    var q3 = $("<p class="question3"></p>").text("Hefewizen is a wheat beer.");
-    var q4 = $("<p class="question4"></p>").text("Pilsners are a type of lager.");
-    var q5 = $("<p class="question5"></p>").text("Yeast turns the sugars of the grain into alcohol.");
-    var q6 = $("<p class="question6"></p>").text("Yeast acts a preservative.");
-    var q7 = $("<p class="question7"></p>").text("Hops add flavor to beer.");
-    var q8 = $("<p class="question8"></p>").text("Hops add aroma to beer.");
-    $("body").append(q1, q2, q3, q4, q5, q6, q7, q8);      // Append the new elements 
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
   }
-//Append to questions (change vars?)
-  function appendText() {
-    var q1 = $("#question1").text("True" + "False");   // Create with jQuery
-    var q2 = $("#question2").text("True" + "False");
-    var q3 = $("#question3").text("True" + "False");
-    var q4 = $("#question4>").text("True" + "False");
-    var q5 = $("#question5").text("True" + "False");
-    var q6 = $("#question6").text("True" + "False");
-    var q7 = $("#question7").text("True" + "False");
-    var q8 = $("#question8").text("True" + "False");
-    $("body").append(q1, q2, q3, q4, q5, q6, q7, q8);      // Append the new elements 
-  } 
-  */
+}, 1000);
 
- //is this in right place?
+
+
+
+//Button on click event shows questions and answers. 
+//This is backwards and I can't get it to reverse.
+ 
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+
+
+//Questions and Answers  
  var myQuestions = [
     {
         question: "IPA stands for Indepenent Pale Ale.",
@@ -39,7 +57,7 @@ function appendText() {
             a: 'True',
             b: 'False'
         },
-        correctAnswer: 'False'
+        correctAnswer: 'b'
     },
     {
         question: "Roasting the barley makes stouts and porters dark.?",
@@ -47,7 +65,7 @@ function appendText() {
             a: 'True',
             b: 'False'
         },
-        correctAnswer: 'True'
+        correctAnswer: 'a'
     },
     {
         question: "Hefewizen is a wheat beer.",
@@ -55,7 +73,7 @@ function appendText() {
             a: 'True',
             b: 'False'
         },
-        correctAnswer: 'True'
+        correctAnswer: 'a'
     },
     {
         question: "Pilsners are a type of lager.",
@@ -63,7 +81,7 @@ function appendText() {
             a: 'True',
             b: 'False'
         },
-        correctAnswer: 'False'
+        correctAnswer: 'b'
     },
     {
         question: "Yeast turns the sugars of the grain into alcohol.",
@@ -71,7 +89,7 @@ function appendText() {
             a: 'True',
             b: 'False'
         },
-        correctAnswer: 'True'
+        correctAnswer: 'a'
     },
     {
         question: "Yeast acts a preservative.",
@@ -79,7 +97,7 @@ function appendText() {
             a: 'True',
             b: 'False'
         },
-        correctAnswer: 'False'
+        correctAnswer: 'b'
     },
     {
         question: "Hops add flavor to beer.",
@@ -87,7 +105,7 @@ function appendText() {
             a: 'True',
             b: 'False'
         },
-        correctAnswer: 'True'
+        correctAnswer: 'a'
     },
     {
         question: "Hops add aroma to beer.",
@@ -95,7 +113,7 @@ function appendText() {
             a: 'True',
             b: 'False'
         },
-        correctAnswer: 'True'
+        correctAnswer: 'a'
     }
 ]; 
 
@@ -187,8 +205,36 @@ showQuestions(questions, quizContainer);
 	submitButton.onclick = function(){
 		showResults(questions, quizContainer, resultsContainer);
     }
-} //function generate quiz bracket    
- /*questions 2nd technique
+} 
+
+/* questions 1st technique Not Working
+function appendText() {
+    var q1 = $("<p class="question1"></p>").text("IPA stands for Indepenent Pale Ale.");   // Create with jQuery
+    var q2 = $("<p class="question2"></p>").text("Roasting the barley makes stouts and porters dark.");
+    var q3 = $("<p class="question3"></p>").text("Hefewizen is a wheat beer.");
+    var q4 = $("<p class="question4"></p>").text("Pilsners are a type of lager.");
+    var q5 = $("<p class="question5"></p>").text("Yeast turns the sugars of the grain into alcohol.");
+    var q6 = $("<p class="question6"></p>").text("Yeast acts a preservative.");
+    var q7 = $("<p class="question7"></p>").text("Hops add flavor to beer.");
+    var q8 = $("<p class="question8"></p>").text("Hops add aroma to beer.");
+    $("body").append(q1, q2, q3, q4, q5, q6, q7, q8);      // Append the new elements 
+  }
+//Append to questions (change vars?)
+  function appendText() {
+    var q1 = $("#question1").text("True" + "False");   // Create with jQuery
+    var q2 = $("#question2").text("True" + "False");
+    var q3 = $("#question3").text("True" + "False");
+    var q4 = $("#question4>").text("True" + "False");
+    var q5 = $("#question5").text("True" + "False");
+    var q6 = $("#question6").text("True" + "False");
+    var q7 = $("#question7").text("True" + "False");
+    var q8 = $("#question8").text("True" + "False");
+    $("body").append(q1, q2, q3, q4, q5, q6, q7, q8);      // Append the new elements 
+  } 
+  */
+
+//function generate quiz bracket    
+ /*questions 2nd technique didn't work
   questions: {
     question1: "IPA stands for Indepenent Pale Ale.",
     question2: "Roasting the barley makes stouts and porters dark.",
@@ -228,13 +274,7 @@ choices: {
 
 // Build timer reference https://fengyuanchen.github.io/countdown/
 
-/*Timer starts running
-$('#timer').text(trivia.timer);
-*/
 //Button on click events for answers record answers
-
-//Only one answer can be selected
-
 
 //All Done Button shows results
 
