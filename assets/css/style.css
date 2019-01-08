@@ -1,28 +1,23 @@
 body{
-    background-image: url("https://raw.githubusercontent.com/reubenwalker64/unit-4-game/master/assets/images/background-web2.jpg");
+    background-image: url("http://media.nj.com/entertainment_impact_dining/photo/beers-65b0e14db8e61765.jpg");
     background-size: cover;
    }
-   
-.content {
-    max-width: 1260px;
-
-}
 
 h1 {
        color: #fff;
-       font-family: serif;
-       font-size: 54px;
-       margin-left: 10px;
-       margin-top: 30px;
+       font-family: fantasy ,serif;
+       font-size: 72px;
+       text-shadow: 4px 3px 1px rgb(109, 2, 2);
+       margin-top: 36px;
        text-align: center;
    }
 
 hr {
-	border-top: 5px solid red;
+	border-top: 5px solid rgb(109, 2, 2);
 }
 /*Style Text*/
 p {
-	
+	margin-right: 20px;
     margin-left: 30px;
 	font-family: sans-serif;
 	color :#04fc14;
@@ -50,10 +45,14 @@ button {
 h2 {
     padding: 20px;
     margin-left: 30px;
-	font-family: serif;
+	font-family: sans-serif;
 	color: white;
     font-size: 30px;
     letter-spacing: 2px;
+}
+
+.instructions {
+    text-align: center;
 }
 
 #show-number, h3 {
@@ -61,7 +60,7 @@ h2 {
     margin-left: 30px;
 	font-family: sans-serif;
 	color: #04fc14;
-    font-size: 22px;
+    font-size: 30px;
     letter-spacing: 2px;
 }
 /*.question{
@@ -84,11 +83,12 @@ h2 {
 	margin-bottom: 20px;
 }
 #submit:hover{
-    background-color: red;
+    background-color: rgb(109, 2, 2);
     text-align: center;
 }
 
 #quiz {
+    margin-right: 10px;
     margin-left: 30px;
     font-family: sans-serif;
 	color: #04fc14;
@@ -99,7 +99,7 @@ h2 {
 #results {
     padding: 20px;
     margin-left: 20px;
-    font-family: serif;
+    font-family: sans-serif;
 	color: #fff;
     font-size: 30px;
     letter-spacing: 2px;
