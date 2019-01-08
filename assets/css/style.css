@@ -22,15 +22,18 @@ hr {
 }
 /*Style Text*/
 p {
-	padding: 10px;
-    margin-left: 20px;
+	
+    margin-left: 30px;
 	font-family: sans-serif;
-	color: #07b814;
+	color :#04fc14;
     font-size: 22px;
     letter-spacing: 2px;
 
 }
-/*Style Buttons*/
+/*Style Buttons
+<!--Start Button. Centering with css wouldn't work??? -->
+<center><button onclick="myFunction()">Begin Game</button></center>
+
 button {
     margin-left: auto;
     margin-right: auto;
@@ -43,7 +46,24 @@ button {
     width: 400px;
     
 }
+*/
+h2 {
+    padding: 20px;
+    margin-left: 30px;
+	font-family: serif;
+	color: white;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
 
+#show-number, h3 {
+    padding: 10px;
+    margin-left: 30px;
+	font-family: sans-serif;
+	color: #04fc14;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
 /*.question{
 	font-weight: 600;
 }
@@ -69,17 +89,18 @@ button {
 }
 
 #quiz {
-    margin-left: 20px;
+    margin-left: 30px;
     font-family: sans-serif;
-	color: #07b814;
+	color: #04fc14;
     font-size: 22px;
     letter-spacing: 2px;
 }
 
 #results {
+    padding: 20px;
     margin-left: 20px;
-    font-family: sans-serif;
-	color: #07b814;
-    font-size: 22px;
+    font-family: serif;
+	color: #fff;
+    font-size: 30px;
     letter-spacing: 2px;
 }

@@ -2,9 +2,20 @@
 
 
 
-//Timer that needs to be edited BIG TIME
+
+
+
+
+
+
 // Set the date we're counting down to
-var countDownDate = new Date("Jan 15, 2019 23:59:59").getTime();
+/*Timer that needs to be edited BIG TIME
+<div id="myDIV">
+            <br>
+            <p id="demo">Countdown timer: </p>
+            <br></br>
+            </br>*/
+/*var countDownDate = new Date("Jan 15, 2019 23:59:59").getTime();
         
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -31,7 +42,7 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
-
+*/
 
 
 
@@ -48,7 +59,54 @@ function myFunction() {
     }
   }
 
+//  Interval Demonstration
+    //  Set our number counter to 60.
+    var number = 30;
 
+    //  Variable that will hold our interval ID when we execute
+    //  the "run" function
+    var intervalId;
+  
+    //  The run function sets an interval
+    //  that runs the decrement function once a second.
+    //  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
+    function run() {
+      clearInterval(intervalId);
+      intervalId = setInterval(decrement, 1000);
+    }
+
+    //  The decrement function.
+    function decrement() {
+
+      //  Decrease number by one.
+      number--;
+
+      //  Show the number in the #show-number tag.
+      $("#show-number").html("<h3>" + number + "</h3>");
+
+
+      //  Once number hits zero...
+      if (number === 0) {
+
+        //  ...run the stop function.
+        stop();
+
+        //  Alert the user that time is up.
+       alert("Time Up! If you haven't already select the all done button to see your score.");
+      }
+    }
+
+    //  The stop function
+    function stop() {
+
+      //  Clears our intervalId
+      //  We just pass the name of the interval
+      //  to the clearInterval function.
+      clearInterval(intervalId);
+    }
+
+    //  Execute the run function.
+    run();
 
 //Questions and Answers  
  var myQuestions = [
