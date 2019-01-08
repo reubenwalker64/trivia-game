@@ -26,7 +26,8 @@ p {
     margin-left: 20px;
 	font-family: sans-serif;
 	color: #07b814;
-	font-size: 22px;
+    font-size: 22px;
+    letter-spacing: 2px;
 
 }
 /*Style Buttons*/
@@ -52,7 +53,8 @@ button {
 */
 #submit{
 	font-family: sans-serif;
-	font-size: 20px;
+    font-size: 20px;
+    letter-spacing: 2px;
 	background-color: green;
 	color: #fff;
 	border: 0px;
@@ -70,7 +72,8 @@ button {
     margin-left: 20px;
     font-family: sans-serif;
 	color: #07b814;
-	font-size: 22px;
+    font-size: 22px;
+    letter-spacing: 2px;
 }
 
 #results {
@@ -78,4 +81,5 @@ button {
     font-family: sans-serif;
 	color: #07b814;
     font-size: 22px;
+    letter-spacing: 2px;
 }

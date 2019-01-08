@@ -36,7 +36,8 @@ var x = setInterval(function() {
 
 
 //Button on click event shows questions and answers. 
-//This is backwards and I can't get it to reverse.
+//This is backwards and I can't get it to reverse. 
+//Tried editing strings and comparison operators.
  
 function myFunction() {
     var x = document.getElementById("myDIV");
@@ -60,7 +61,7 @@ function myFunction() {
         correctAnswer: 'b'
     },
     {
-        question: "Roasting the barley makes stouts and porters dark.?",
+        question: "Roasting the barley makes stouts and porters dark.",
         answers: {
             a: 'True',
             b: 'False'
@@ -146,7 +147,7 @@ generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
 			answers.push(
 				'<label>'
 					+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
-					+ letter + ': '
+					+ '\xa0' + letter + ': ' 
 					+ questions[i].answers[letter]
 				+ '</label>'
 			);
